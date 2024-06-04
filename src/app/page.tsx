@@ -6,7 +6,7 @@ export default function Home() {
       <h1>BlueGuard</h1>
 
       <link rel="stylesheet" href="" />
-      <a href="./home">Home</a>
+      <a href="./beachReport">Home</a>
     </main>
   );
 }

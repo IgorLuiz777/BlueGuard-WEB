@@ -32,6 +32,7 @@ export const ReportItem: React.FC<ReportItemProps> = ({ report }) => {
                     location={report.location}
                     description={report.description}
                     condition={report.condition}
+                    imageUrl={report.imageUrl}
                 />
             </div>
         </div>
