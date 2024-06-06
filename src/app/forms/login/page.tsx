@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import { Input, Card, CardBody, CardHeader, CardFooter } from "@nextui-org/react";
 import { login } from "@/app/actions/user/login";
-import Cookies from 'js-cookie';
 
 export default function LoginForm() {
     const [username, setUsername] = useState("");
@@ -16,8 +15,9 @@ export default function LoginForm() {
         try {
             const result = await login({ username, password });
             console.log("Login bem sucedido", result);
-            console.log("Token de acesso:", result.accesToken);
+            console.log("Token de acesso:", result.accessToken);
             console.log("Expira em:", result.expiresIn);
+            console.log("Valor de accessToken:", sessionStorage.getItem('accessToken'));
             window.location.href = "/beachReport";
         } catch (error) {
             setError("Login falhou. Por favor, verifique seu nome de usuário e senha.");

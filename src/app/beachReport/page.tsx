@@ -1,3 +1,4 @@
+"use server"
 import NavBar from "@/components/NavBar";
 import { getAllReports } from "../actions/beachReport/getAll";
 import { Button } from "@nextui-org/react";

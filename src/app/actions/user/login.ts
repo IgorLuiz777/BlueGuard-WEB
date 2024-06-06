@@ -1,5 +1,4 @@
 import toast from "react-hot-toast";
-import Cookies from 'js-cookie';
 
 interface User {
     username: string;
@@ -23,10 +22,10 @@ export async function login({ username, password }: User) {
         if (response.ok) {
             const responseData = await response.json();
                 
-            Cookies.set('accesToken', responseData.accesToken, { sameSite: 'strict' });
-            Cookies.set('expiresIn', responseData.expiresIn, { sameSite: 'strict' });
+            sessionStorage.setItem('accessToken', responseData.accessToken);
+            sessionStorage.setItem('expiresIn', responseData.expiresIn);
             return {
-                accesToken: responseData.accesToken,
+                accessToken: responseData.accessToken,
                 expiresIn: responseData.expiresIn
             };
         }
