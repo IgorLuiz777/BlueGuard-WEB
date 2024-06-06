@@ -1,5 +1,5 @@
-import toast from "react-hot-toast";
-
+"use server"
+import { cookies } from 'next/headers'
 interface User {
     username: string;
     password: string;
@@ -21,9 +21,15 @@ export async function login({ username, password }: User) {
 
         if (response.ok) {
             const responseData = await response.json();
+
+            cookies().set("accessToken",  responseData.accessToken)
                 
-            sessionStorage.setItem('accessToken', responseData.accessToken);
-            sessionStorage.setItem('expiresIn', responseData.expiresIn);
+            //sessionStorage.setItem('accessToken', responseData.accessToken);
+            //sessionStorage.setItem('expiresIn', responseData.expiresIn);
+
+            console.log(responseData.accessToken);
+            
+
             return {
                 accessToken: responseData.accessToken,
                 expiresIn: responseData.expiresIn
@@ -43,7 +49,6 @@ export async function login({ username, password }: User) {
         throw new Error('Network response was not ok');
     } catch (error) {
         console.error('Failed to login:', error);
-        toast.error('Failed to login. Please try again.');
         throw error;
     }
 }
