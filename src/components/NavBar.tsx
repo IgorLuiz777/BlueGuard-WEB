@@ -35,7 +35,7 @@ export default function NavBar() {
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarBrand className="grid justify-items-start">
-        <Link color="foreground" href="#">
+        <Link color="foreground" href="../">
           <p className="font-bold text-inherit">Sobre o BlueGuard</p>
         </Link>
         </NavbarBrand>

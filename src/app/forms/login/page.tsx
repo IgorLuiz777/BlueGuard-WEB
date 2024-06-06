@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from "react";
-import { Input, Card, CardBody, CardHeader, CardFooter } from "@nextui-org/react";
+import { Input, Card, CardBody, CardHeader, CardFooter, Link } from "@nextui-org/react";
 import { login } from "@/app/actions/user/login";
 
 export default function LoginForm() {
@@ -27,7 +27,7 @@ export default function LoginForm() {
     };
 
     return (
-        <main className="flex min-h-screen flex-col items-center justify-center p-6 bg-gray-100">
+        <main className="flex min-h-screen flex-col items-center justify-center p-6">
             <Card className="w-full max-w-md bg-white shadow-lg rounded-lg">
                 <CardHeader className="text-center p-6">
                     <h1 className="text-2xl font-bold text-gray-800">Login</h1>
@@ -62,7 +62,12 @@ export default function LoginForm() {
                 </CardBody>
                 <CardFooter className="text-center p-6">
                     <p className="text-gray-600">
-                        Esqueceu sua senha? <a href="#" className="text-blue-500 hover:underline">Clique aqui</a>
+                        Esqueceu sua senha? <Link href="#" className="text-blue-500 hover:underline">Clique aqui</Link>
+                    </p>
+                </CardFooter>
+                <CardFooter className="text-center p-6">
+                    <p className="text-gray-600">
+                        Quer Voltar? <Link href="../" className="text-blue-500 hover:underline">Clique aqui</Link>
                     </p>
                 </CardFooter>
             </Card>
