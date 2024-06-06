@@ -22,7 +22,7 @@ interface ReportItemProps {
     report: Report;
 }
 
-export const ReportItem: React.FC<ReportItemProps> = ({ report }) => {
+const ReportItem: React.FC<ReportItemProps> = ({ report }) => {
     return (
         <div>
             <div className="flex items-center mb-2">
@@ -38,3 +38,5 @@ export const ReportItem: React.FC<ReportItemProps> = ({ report }) => {
         </div>
     );
 };
+
+export default ReportItem;

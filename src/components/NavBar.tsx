@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Navbar, NavbarBrand, NavbarMenuToggle, NavbarMenuItem, NavbarMenu, NavbarContent, NavbarItem, Link, Button, Dropdown, DropdownTrigger, DropdownMenu, DropdownItem } from "@nextui-org/react";
+import { Navbar, NavbarBrand, NavbarMenuToggle, NavbarMenuItem, NavbarMenu, NavbarContent, NavbarItem, Link, Button, Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Image } from "@nextui-org/react";
 import { User } from "@nextui-org/react";
 
 export default function NavBar() {
@@ -25,21 +25,22 @@ export default function NavBar() {
 
       <NavbarContent className="sm:hidden pr-3" justify="center">
         <NavbarBrand>
-          <p className="font-bold text-inherit">BlueGuard</p>
+        <Image src="../favicon.ico" width={75}/>
         </NavbarBrand>
+      </NavbarContent>
+
+      <NavbarContent className="hidden sm:flex gap-4">
+        <Image className="justify-start" src="../favicon.ico" width={75}/>
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarBrand className="grid justify-items-start">
-          <p className="font-bold text-inherit">BlueGuard</p>
+        <Link color="foreground" href="#">
+          <p className="font-bold text-inherit">Sobre o BlueGuard</p>
+        </Link>
         </NavbarBrand>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Sobre o Projeto
-          </Link>
-        </NavbarItem>
         <NavbarItem isActive>
-          <Link href="./home" aria-current="page">
+          <Link href="./beachReport" aria-current="page">
             Relatórios
           </Link>
         </NavbarItem>
@@ -53,19 +54,19 @@ export default function NavBar() {
       <NavbarContent justify="end">
         <Dropdown>
           <DropdownTrigger>
-            <a><User
+            <Link className="cursor-pointer"><User
               name="Igor"
               description="igor@gmail.com"
               avatarProps={{
                 src: ""
               }}
-            /></a>
+            /></Link>
           </DropdownTrigger>
           <DropdownMenu aria-label="Exemplo com ações desativadas" disabledKeys={["edit", "delete"]}>
             <DropdownItem key="copy">Copiar link</DropdownItem>
             <DropdownItem key="edit">Editar arquivo</DropdownItem>
             <DropdownItem key="delete" className="text-danger" color="danger">
-              Excluir
+              Log Out
             </DropdownItem>
           </DropdownMenu>
         </Dropdown>

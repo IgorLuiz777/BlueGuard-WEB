@@ -17,7 +17,7 @@ const UserCard: React.FC<UserCardProps> = ({ username, email, location, descript
   const [isFollowed, setIsFollowed] = React.useState(false);
 
   return (
-    <Card className="w-[50vw]">
+    <Card className="w-[60vw]">
       <CardHeader className="justify-between">
         <div className="flex gap-5">
           <User
@@ -39,13 +39,12 @@ const UserCard: React.FC<UserCardProps> = ({ username, email, location, descript
             alt="Card background"
             className="object-cover rounded-xl"
             src={imageUrl}
-            width={600}
           />
         </div>
       </CardBody>
       <CardFooter className="flex items-center">
         <MapPin size={20} />
-        <p className="text-small ml-1">{location}</p>
+        <p className="text-small ml-1 object-cover rounded-xl w-[80vw]">{location}</p>
       </CardFooter>
     </Card>
   );

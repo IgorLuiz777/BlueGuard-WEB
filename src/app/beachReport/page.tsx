@@ -1,8 +1,8 @@
 import NavBar from "@/components/NavBar";
 import { getAllReports } from "../actions/beachReport/getAll";
-import { ReportItem } from "./ReportItem";
 import { Button } from "@nextui-org/react";
 import Link from "next/link";
+import ReportItem from "./ReportItem";
 
 export default async function BeachReport() {
     const reports = await getAllReports();
