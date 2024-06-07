@@ -17,7 +17,7 @@ export default async function BeachReport() {
             <section className="flex min-h-screen flex-col items-center justify-between">
             <h1 className="text-4xl m-10 ">Relatórios</h1>
 
-            <Link className="m-5" href={"./beachReport/create"}><Button>Criar Relarório</Button></Link>
+            <Link className="m-5" href={"./beachReport/create"}><Button color="primary">Criar Relarório</Button></Link>
             
             
             <div id="data">
@@ -25,8 +25,6 @@ export default async function BeachReport() {
                     <ReportItem key={report.id} report={report} />
                 ))}
             </div>
-
-            <a href="../">inicio</a>
             </section>
             <Footer></Footer>
         </main>

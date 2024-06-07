@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Navbar, NavbarBrand, NavbarMenuToggle, NavbarMenuItem, NavbarMenu, NavbarContent, NavbarItem, Link, Button, Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Image } from "@nextui-org/react";
+import { Navbar, NavbarBrand, NavbarMenuToggle, NavbarMenuItem, NavbarMenu, NavbarContent, NavbarItem, Link, Button, Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Image, Avatar } from "@nextui-org/react";
 import { User } from "@nextui-org/react";
 
 export default function NavBar() {
@@ -54,13 +54,7 @@ export default function NavBar() {
       <NavbarContent justify="end">
         <Dropdown>
           <DropdownTrigger>
-            <Link className="cursor-pointer"><User
-              name="Igor"
-              description="igor@gmail.com"
-              avatarProps={{
-                src: ""
-              }}
-            /></Link>
+            <Link className="cursor-pointer"><Avatar showFallback src='https://images.unsplash.com/broken' /></Link>
           </DropdownTrigger>
           <DropdownMenu aria-label="Exemplo com ações desativadas" disabledKeys={["edit", "delete"]}>
             <DropdownItem key="copy">Copiar link</DropdownItem>

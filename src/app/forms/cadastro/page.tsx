@@ -19,7 +19,7 @@ export default function Cadastro() {
 
             window.location.href = "/forms/login";
         } catch (error) {
-            setError("Castro falhou. Por favor, verifique seu nome de usuário e senha.");
+            setError("Cadastro falhou. Por favor, verifique seu nome de usuário e senha.");
         } finally {
             setLoading(false);
         }
@@ -30,7 +30,7 @@ export default function Cadastro() {
             <Image className="mb-5" src="../favicon.ico" width={200} alt="BlueGuard Logo"></Image>
             <Card className="w-full max-w-md bg-white shadow-lg rounded-lg">
                 <CardHeader className="text-center p-6">
-                    <h1 className="text-2xl font-bold text-gray-800">Register</h1>
+                    <h1 className="text-2xl font-bold text-gray-800">Cadastro</h1>
                 </CardHeader>
                 <CardBody className="flex flex-col gap-6 p-6">
                      {error && <p className="text-red-500">{error}</p>}
@@ -66,12 +66,12 @@ export default function Cadastro() {
                         onClick={handleLogin}
                         disabled={loading}
                     >
-                        {loading ? 'Loading...' : 'Login'}
+                        {loading ? 'Loading...' : 'Cadastrar'}
                     </button>
                 </CardBody>
                 <CardFooter className="text-center p-6">
                     <p className="text-gray-600">
-                        Esqueceu sua senha? <Link href="#" className="text-blue-500 hover:underline">Clique aqui</Link>
+                        Já tem registro? <Link href="/forms/login" className="text-blue-500 hover:underline">Clique aqui</Link>
                     </p>
                 </CardFooter>
                 <CardFooter className="text-center p-6">

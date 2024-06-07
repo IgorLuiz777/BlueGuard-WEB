@@ -35,7 +35,7 @@ export async function getAllReports(): Promise<Report[]> {
         next: { revalidate: 0 }
     }).then(resp => {
         if (!resp.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error('É preciso estar logado para acessar essa página vá para /forms/login');
         }
         return resp.json();
     }).then(data => {
