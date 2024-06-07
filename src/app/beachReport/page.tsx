@@ -4,6 +4,7 @@ import { getAllReports } from "../actions/beachReport/getAll";
 import { Button } from "@nextui-org/react";
 import Link from "next/link";
 import ReportItem from "./ReportItem";
+import Footer from "@/components/Footer";
 
 export default async function BeachReport() {
     const reports = await getAllReports();
@@ -27,7 +28,7 @@ export default async function BeachReport() {
 
             <a href="../">inicio</a>
             </section>
-            
+            <Footer></Footer>
         </main>
     );
 }

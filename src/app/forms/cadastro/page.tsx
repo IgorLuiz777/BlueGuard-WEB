@@ -1,11 +1,13 @@
 "use client"
-import React, { useState } from "react";
+import { Register } from "@/app/actions/user/create";
 import { Input, Card, CardBody, CardHeader, CardFooter, Link, Image } from "@nextui-org/react";
-import { login } from "@/app/actions/user/login";
+import React, { useState } from "react";
 
-export default function LoginForm() {
+
+export default function Cadastro() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [email, setEmail] = useState("");
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
 
@@ -13,14 +15,11 @@ export default function LoginForm() {
         setLoading(true);
         setError("");
         try {
-            const result = await login({ username, password });
-            // console.log("Login bem sucedido", result);
-            // console.log("Token de acesso:", result.accessToken);
-            // console.log("Expira em:", result.expiresIn);
-            // console.log("Valor de accessToken:", sessionStorage.getItem('accessToken'));
-            window.location.href = "/beachReport";
+            const result = await Register({ username, email, password });
+
+            window.location.href = "/forms/login";
         } catch (error) {
-            setError("Login falhou. Por favor, verifique seu nome de usuário e senha.");
+            setError("Castro falhou. Por favor, verifique seu nome de usuário e senha.");
         } finally {
             setLoading(false);
         }
@@ -31,10 +30,10 @@ export default function LoginForm() {
             <Image className="mb-5" src="../favicon.ico" width={200} alt="BlueGuard Logo"></Image>
             <Card className="w-full max-w-md bg-white shadow-lg rounded-lg">
                 <CardHeader className="text-center p-6">
-                    <h1 className="text-2xl font-bold text-gray-800">Login</h1>
+                    <h1 className="text-2xl font-bold text-gray-800">Register</h1>
                 </CardHeader>
                 <CardBody className="flex flex-col gap-6 p-6">
-                    {error && <p className="text-red-500">{error}</p>}
+                     {error && <p className="text-red-500">{error}</p>}
                     <Input
                         className="p-5 text-black"
                         type="text"
@@ -43,6 +42,15 @@ export default function LoginForm() {
                         placeholder="Digite o seu Username"
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
+                    />
+                    <Input
+                        className="p-5 text-black"
+                        type="text"
+                        variant="underlined"
+                        label="Email"
+                        placeholder="Digite o seu Email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                     />
                     <Input
                         className="p-5 text-black"
@@ -74,4 +82,5 @@ export default function LoginForm() {
             </Card>
         </main>
     );
+
 }
