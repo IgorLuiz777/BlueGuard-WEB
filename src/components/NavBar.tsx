@@ -56,9 +56,9 @@ export default function NavBar() {
           <DropdownTrigger>
             <Link className="cursor-pointer"><Avatar showFallback src='https://images.unsplash.com/broken' /></Link>
           </DropdownTrigger>
-          <DropdownMenu aria-label="Exemplo com ações desativadas" disabledKeys={["edit", "delete"]}>
-            <DropdownItem key="copy">Copiar link</DropdownItem>
-            <DropdownItem key="edit">Editar arquivo</DropdownItem>
+          <DropdownMenu aria-label="Exemplo com ações desativadas" disabledKeys={["copyd" ,"edit", "delete"]}>
+            <DropdownItem key="copy">Abrir Perfil</DropdownItem>
+            <DropdownItem key="edit">Editar Perfil</DropdownItem>
             <DropdownItem key="delete" className="text-danger" color="danger">
               Log Out
             </DropdownItem>

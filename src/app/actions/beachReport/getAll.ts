@@ -39,7 +39,7 @@ export async function getAllReports(): Promise<Report[]> {
         }
         return resp.json();
     }).then(data => {
-        return data.content.map((item: any) => ({
+        return data._embedded.beachReportList.map((item: any) => ({
             id: item.id,
             user: {
                 id: item.user.id,

@@ -17,7 +17,7 @@ export async function login({ username, password }: User) {
     };
 
     try {
-        const response = await fetch(`http://localhost:8080/login`, options);
+        const response = await fetch(`${process.env.API_BASE_URL}/login`, options);
 
         if (response.ok) {
             const responseData = await response.json();

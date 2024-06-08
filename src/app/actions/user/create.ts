@@ -17,7 +17,7 @@ export async function Register({ username, email, password }: User) {
     };
 
     try {
-        const response = await fetch(`http://localhost:8080/users`, options);
+        const response = await fetch(`${process.env.API_BASE_URL}/users`, options);
 
         if (response.ok) {
             const responseData = await response.json();
